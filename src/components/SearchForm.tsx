@@ -3,11 +3,11 @@ export default function SearchForm() {
 
     return (
         <div className="max-w-2xl mx-auto">
-            <form action="" className="pt-10  w-96 mx-auto ">
-                <div className="flex bg-primary p-3 justify-between items-center  rounded-xl w-96 mx-auto relative translate-y-9">
+            <form action="" className="pt-10  mx-auto scale-x-110 ">
+                <div className="flex bg-primary px-8 py-5 justify-between items-center  rounded-xl mx-auto relative translate-y-9">
                     <img src="/Search.svg" alt="Logo lupa de busqueda" className="my-auto mr-4" />
                     <input
-                        type="text"
+                        type="search"
                         placeholder="username"
                         name="search"
                         id="search"
