@@ -8,8 +8,9 @@ export default function BgImage() {
                 backgroundColor: '#20293A',
                 backgroundImage: 'url(/hero-image-github-profile.png)',
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '100vw 30vh',
+                backgroundSize: 'contain',
                 overflowX: 'hidden',
+                
             }}
         >
 
