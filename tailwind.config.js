@@ -9,16 +9,20 @@ export default {
       colors: {
         primary: "#20293A",
         colorTxt: "#CDD5E0",
+        followers: "#111729",
+        textFollowers: "#4A5567",
+        p: "#8a95a7",
+        pAlt: "#20293A",
       },
       flexBasis: {
         "1/10": "10%",
       },
       fontFamily: {
-        vietnam: ['"Be Vietnam Pro"', "sans-serif"], 
+        vietnam: ['"Be Vietnam Pro"', "sans-serif"],
       },
       width: {
-        input: '50px'
-      }
+        input: "50px",
+      },
     },
   },
   plugins: [],

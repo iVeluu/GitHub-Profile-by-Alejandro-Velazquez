@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getUser } from './api/ProfileAPI';
 import Header from './components/Header';
+import UserInfo from './components/UserInfo';
 
 function App() {
   const userName = 'midudev';
@@ -20,6 +21,7 @@ function App() {
   if (data) return (
     <div>
       <Header />
+      <UserInfo />
     </div>
   );
 
