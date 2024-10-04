@@ -1,5 +1,5 @@
 import axios, { isAxiosError } from "axios";
-import { profileResponse, nameUser } from "../types";
+import { profileResponse, nameUser, reposSchema } from "../types";
 
 export async function getUser( userName : nameUser ) {
     try {
@@ -7,7 +7,14 @@ export async function getUser( userName : nameUser ) {
         const { data } = await axios(url)
         const result = profileResponse.safeParse(data)
         if(result.success){
-            return result.data
+            const reposURL = result.data.repos_url
+            const { data } = await axios(reposURL)
+            const response = reposSchema.safeParse(data)
+            if(response.success){
+                return { userInfo: result.data, reposInfo: response.data}
+            }   else{
+                throw new Error("Error en la validación de los datos");
+            }
         }   else {
             throw new Error("Error en la validación de los datos");
         }
