@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { getUser } from './api/ProfileAPI';
-import BgImage from './components/BgImage';
+import Header from './components/Header';
 
 function App() {
   const userName = 'midudev';
@@ -19,7 +19,7 @@ function App() {
 
   if (data) return (
     <div>
-      <BgImage />
+      <Header />
     </div>
   );
 
