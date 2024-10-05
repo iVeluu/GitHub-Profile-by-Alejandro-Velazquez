@@ -1,38 +1,43 @@
+import { Profile } from "../types"
 
-export default function UserInfo() {
+type UserInfoPros = {
+    user: Profile
+}
+
+export default function UserInfo({ user }: UserInfoPros) {
     return (
-        <div className="max-w-6xl mx-auto">
-            <div className="flex justify-start ">
+        <div className="md:max-w-3xl lg:max-w-5xl mx-auto">
+            <div className="flex lg:justify-start ">
 
-                <div className="">
+                <div className="relative md:-translate-y-11 lg:-translate-y-14">
                     <img 
-                        src="https://avatars.githubusercontent.com/u/9919?v=4" alt="dasdsa" 
-                        className="w-44 h-44 border-primary border-8 rounded-xl -translate-y-16 mr-16 flex-shrink-0"  
+                        src={user.avatar_url} alt="dasdsa" 
+                        className="border-primary border-8 rounded-xl md:w-32 md:scale-110  lg:mr-16 lg:w-36 "  
                     />
                 </div>
 
-                <div className="flex sm:flex-col md:flex-row gap-10 justify-start text-white mt-4 ml-4 text-base">
+                <div className="flex flex-1 sm:flex-col md:flex-row md:gap-5 xl:gap-10 justify-start text-white mt-4  ">
                     <div className="flex items-center justify-between bg-followers px-6 rounded-lg max-h-16">
                         <p className="mr-2 text-textFollowers">Followers</p>
                         <p className="mr-2 text-textFollowers">|</p>
-                        <p className="text-colorTxt">27839</p>
+                        <p className="text-colorTxt">{user.followers}</p>
                     </div>
                     <div className="flex items-center bg-followers px-6 rounded-lg  max-h-16 justify-between">
                         <p className="mr-2 text-textFollowers">Following</p>
                         <p className="mr-2 text-textFollowers">|</p>
-                        <p className="text-colorTxt">0</p>
+                        <p className="text-colorTxt">{user.following}</p>
                     </div>
                     <div className="flex items-center bg-followers px-6 rounded-lg max-w-auto max-h-16 justify-between">
                         <p className="mr-2 text-textFollowers">Location</p>
                         <p className="mr-2 text-textFollowers">|</p>
-                        <p className="text-colorTxt">San Francisco, CA</p>
+                        <p className="text-colorTx ">{user.location}</p>
                     </div>
                 </div>
             </div>
 
-            <div className="relative -translate-y-9">
-                <h1 className="text-colorTxt text-[32px]">GitHub</h1>
-                <p className="text-p text-[20px]">How people build software</p>
+            <div className="relative md:mt-4 lg:-translate-y-5   ">
+                <h1 className="text-colorTxt text-[32px]">{user.name}</h1>
+                <p className="text-p text-[20px]">{user.bio}</p>
             </div>
         </div>
     )

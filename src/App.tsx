@@ -4,7 +4,7 @@ import Header from './components/Header';
 import UserInfo from './components/UserInfo';
 
 function App() {
-  const userName = 'midudev';
+  const userName = 'iVeluu';
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ['project', userName],
@@ -21,7 +21,7 @@ function App() {
   if (data) return (
     <div>
       <Header />
-      <UserInfo />
+      <UserInfo user={data.userInfo} />
     </div>
   );
 
