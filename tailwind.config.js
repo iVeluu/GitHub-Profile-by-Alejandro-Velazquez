@@ -13,6 +13,7 @@ export default {
         textFollowers: "#4A5567",
         p: "#8a95a7",
         pAlt: "#20293A",
+        outColor: "#3662E3",
       },
       flexBasis: {
         "1/10": "10%",

@@ -35,9 +35,9 @@ export default function UserInfo({ user }: UserInfoPros) {
                 </div>
             </div>
 
-            <div className="relative md:mt-4 lg:-translate-y-5   ">
+            <div className="relative md:mt-4 lg:-translate-y-5">
                 <h1 className="text-colorTxt text-[32px]">{user.name}</h1>
-                <p className="text-p text-[20px]">{user.bio}</p>
+                <p className="text-p text-[20px]">{user.bio ? user.bio : 'Not biography '}</p>
             </div>
         </div>
     )

@@ -12,6 +12,8 @@ export const profileResponse = z.object({
 
 export const reposSchema = z.array(z.object({
     id: z.number(),
+    name: z.string(),
+    description: z.string().nullable(),
     html_url: z.string(),
     updated_at: z.string(),
     stargazers_count: z.number(),
@@ -21,6 +23,20 @@ export const reposSchema = z.array(z.object({
     }).nullable()
 }))
 
+export const repoSchema = z.object({
+    id: z.number(),
+    name: z.string(),
+    description: z.string().nullable(),
+    html_url: z.string(),
+    updated_at: z.string(),
+    stargazers_count: z.number(),
+    forks_count: z.number(),
+    license: z.object({
+        name: z.string()
+    }).nullable()
+})
+
 export type Profile = z.infer<typeof profileResponse>
 export type Repos = z.infer<typeof reposSchema>
+export type Repo = z.infer<typeof repoSchema>
 export type nameUser = string
